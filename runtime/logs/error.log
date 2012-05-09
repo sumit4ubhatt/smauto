@@ -1,0 +1,502 @@
+2012-05-07 22:24:02,118 (main) [            UtilXml.java:1068:ERROR] XmlFileLoader: File F:/opentaps-1.5.0/opentaps/crmsfa/servicedef/services_leads.xml process error. Line: 82. Error message: cvc-complex-type.2.4.a: Invalid content was found starting with element 'description'. One of '{type-validate}' is expected.
+2012-05-07 22:26:44,609 (http-0.0.0.0-8080-1) [            UtilXml.java:1068:ERROR] XmlFileLoader: File file:/F:/opentaps-1.5.0/opentaps/homeapps/widget/screens/HomeWebAppsMain.xml process error. Line: 75. Error message: cvc-complex-type.2.4.b: The content of element 'decorator-screen' is not complete. One of '{decorator-section}' is expected.
+2012-05-07 22:27:13,390 (http-0.0.0.0-8080-1) [     RequestHandler.java:194:ERROR] Got a insecure (non-https) form POST to a secure (http) request [login], returning error
+2012-05-07 22:27:13,760 (http-0.0.0.0-8080-1) [            UtilXml.java:1068:ERROR] XmlFileLoader: File file:/F:/opentaps-1.5.0/opentaps/homeapps/widget/screens/HomeWebAppsMain.xml process error. Line: 75. Error message: cvc-complex-type.2.4.b: The content of element 'decorator-screen' is not complete. One of '{decorator-section}' is expected.
+2012-05-07 22:27:30,118 (http-0.0.0.0-8080-2) [     RequestHandler.java:194:ERROR] Got a insecure (non-https) form POST to a secure (http) request [gwtGetViewPreference], returning error
+2012-05-07 22:27:30,200 (http-0.0.0.0-8080-3) [     RequestHandler.java:194:ERROR] Got a insecure (non-https) form POST to a secure (http) request [gwtGetViewPreference], returning error
+2012-05-07 22:27:30,262 (http-0.0.0.0-8080-4) [     RequestHandler.java:194:ERROR] Got a insecure (non-https) form POST to a secure (http) request [gwtGetViewPreference], returning error
+2012-05-07 22:27:30,319 (http-0.0.0.0-8080-5) [     RequestHandler.java:194:ERROR] Got a insecure (non-https) form POST to a secure (http) request [gwtGetViewPreference], returning error
+2012-05-07 22:27:30,339 (http-0.0.0.0-8080-6) [     RequestHandler.java:194:ERROR] Got a insecure (non-https) form POST to a secure (http) request [gwtSuggestOpportunityStages], returning error
+2012-05-07 22:27:32,422 (http-0.0.0.0-8080-5) [   GenericDelegator.java:1369:ERROR] 
+---- exception report ----------------------------------------------------------
+Failure in store operation for entity [ServerHit]: org.ofbiz.entity.GenericEntityNotFoundException: Tried to update an entity that does not exist.. Rolling back transaction.
+Exception: org.ofbiz.entity.GenericEntityNotFoundException
+Message: Tried to update an entity that does not exist.
+---- stack trace ---------------------------------------------------------------
+org.ofbiz.entity.GenericEntityNotFoundException: Tried to update an entity that does not exist.
+org.ofbiz.entity.datasource.GenericDAO.singleUpdate(GenericDAO.java:285)
+org.ofbiz.entity.datasource.GenericDAO.customUpdate(GenericDAO.java:216)
+org.ofbiz.entity.datasource.GenericDAO.update(GenericDAO.java:210)
+org.ofbiz.entity.datasource.GenericHelperDAO.store(GenericHelperDAO.java:172)
+org.ofbiz.entity.GenericDelegator.store(GenericDelegator.java:1354)
+org.ofbiz.entity.GenericDelegator.createOrStore(GenericDelegator.java:921)
+org.ofbiz.entity.GenericDelegator.createOrStore(GenericDelegator.java:951)
+org.ofbiz.webapp.stats.ServerHitBin.saveHit(ServerHitBin.java:721)
+org.ofbiz.webapp.stats.ServerHitBin.countHit(ServerHitBin.java:219)
+org.ofbiz.webapp.stats.ServerHitBin.countHit(ServerHitBin.java:85)
+org.ofbiz.webapp.stats.ServerHitBin.countRequest(ServerHitBin.java:63)
+org.ofbiz.webapp.control.ControlServlet.doGet(ControlServlet.java:322)
+org.ofbiz.webapp.control.ControlServlet.doPost(ControlServlet.java:91)
+javax.servlet.http.HttpServlet.service(HttpServlet.java:637)
+javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+org.ofbiz.webapp.control.ContextFilter.doFilter(ContextFilter.java:270)
+org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:555)
+org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:298)
+org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:852)
+org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:588)
+org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+java.lang.Thread.run(Thread.java:619)
+--------------------------------------------------------------------------------
+
+2012-05-07 22:27:32,427 (http-0.0.0.0-8080-5) [   GenericDelegator.java:932:ERROR] 
+---- exception report ----------------------------------------------------------
+Failure in createOrStore operation for entity [ServerHit]: org.ofbiz.entity.GenericEntityNotFoundException: Tried to update an entity that does not exist.. Rolling back transaction.
+Exception: org.ofbiz.entity.GenericEntityNotFoundException
+Message: Tried to update an entity that does not exist.
+---- stack trace ---------------------------------------------------------------
+org.ofbiz.entity.GenericEntityNotFoundException: Tried to update an entity that does not exist.
+org.ofbiz.entity.datasource.GenericDAO.singleUpdate(GenericDAO.java:285)
+org.ofbiz.entity.datasource.GenericDAO.customUpdate(GenericDAO.java:216)
+org.ofbiz.entity.datasource.GenericDAO.update(GenericDAO.java:210)
+org.ofbiz.entity.datasource.GenericHelperDAO.store(GenericHelperDAO.java:172)
+org.ofbiz.entity.GenericDelegator.store(GenericDelegator.java:1354)
+org.ofbiz.entity.GenericDelegator.createOrStore(GenericDelegator.java:921)
+org.ofbiz.entity.GenericDelegator.createOrStore(GenericDelegator.java:951)
+org.ofbiz.webapp.stats.ServerHitBin.saveHit(ServerHitBin.java:721)
+org.ofbiz.webapp.stats.ServerHitBin.countHit(ServerHitBin.java:219)
+org.ofbiz.webapp.stats.ServerHitBin.countHit(ServerHitBin.java:85)
+org.ofbiz.webapp.stats.ServerHitBin.countRequest(ServerHitBin.java:63)
+org.ofbiz.webapp.control.ControlServlet.doGet(ControlServlet.java:322)
+org.ofbiz.webapp.control.ControlServlet.doPost(ControlServlet.java:91)
+javax.servlet.http.HttpServlet.service(HttpServlet.java:637)
+javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+org.ofbiz.webapp.control.ContextFilter.doFilter(ContextFilter.java:270)
+org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:555)
+org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:298)
+org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:852)
+org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:588)
+org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+java.lang.Thread.run(Thread.java:619)
+--------------------------------------------------------------------------------
+
+2012-05-07 22:27:32,434 (http-0.0.0.0-8080-5) [       ServerHitBin.java:725:ERROR] 
+---- exception report ----------------------------------------------------------
+Could not save ServerHit:
+Exception: org.ofbiz.entity.GenericEntityNotFoundException
+Message: Tried to update an entity that does not exist.
+---- stack trace ---------------------------------------------------------------
+org.ofbiz.entity.GenericEntityNotFoundException: Tried to update an entity that does not exist.
+org.ofbiz.entity.datasource.GenericDAO.singleUpdate(GenericDAO.java:285)
+org.ofbiz.entity.datasource.GenericDAO.customUpdate(GenericDAO.java:216)
+org.ofbiz.entity.datasource.GenericDAO.update(GenericDAO.java:210)
+org.ofbiz.entity.datasource.GenericHelperDAO.store(GenericHelperDAO.java:172)
+org.ofbiz.entity.GenericDelegator.store(GenericDelegator.java:1354)
+org.ofbiz.entity.GenericDelegator.createOrStore(GenericDelegator.java:921)
+org.ofbiz.entity.GenericDelegator.createOrStore(GenericDelegator.java:951)
+org.ofbiz.webapp.stats.ServerHitBin.saveHit(ServerHitBin.java:721)
+org.ofbiz.webapp.stats.ServerHitBin.countHit(ServerHitBin.java:219)
+org.ofbiz.webapp.stats.ServerHitBin.countHit(ServerHitBin.java:85)
+org.ofbiz.webapp.stats.ServerHitBin.countRequest(ServerHitBin.java:63)
+org.ofbiz.webapp.control.ControlServlet.doGet(ControlServlet.java:322)
+org.ofbiz.webapp.control.ControlServlet.doPost(ControlServlet.java:91)
+javax.servlet.http.HttpServlet.service(HttpServlet.java:637)
+javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+org.ofbiz.webapp.control.ContextFilter.doFilter(ContextFilter.java:270)
+org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:555)
+org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:298)
+org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:852)
+org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:588)
+org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+java.lang.Thread.run(Thread.java:619)
+--------------------------------------------------------------------------------
+
+2012-05-07 22:27:32,454 (http-0.0.0.0-8080-2) [   GenericDelegator.java:1369:ERROR] 
+---- exception report ----------------------------------------------------------
+Failure in store operation for entity [ServerHit]: org.ofbiz.entity.GenericEntityNotFoundException: Tried to update an entity that does not exist.. Rolling back transaction.
+Exception: org.ofbiz.entity.GenericEntityNotFoundException
+Message: Tried to update an entity that does not exist.
+---- stack trace ---------------------------------------------------------------
+org.ofbiz.entity.GenericEntityNotFoundException: Tried to update an entity that does not exist.
+org.ofbiz.entity.datasource.GenericDAO.singleUpdate(GenericDAO.java:285)
+org.ofbiz.entity.datasource.GenericDAO.customUpdate(GenericDAO.java:216)
+org.ofbiz.entity.datasource.GenericDAO.update(GenericDAO.java:210)
+org.ofbiz.entity.datasource.GenericHelperDAO.store(GenericHelperDAO.java:172)
+org.ofbiz.entity.GenericDelegator.store(GenericDelegator.java:1354)
+org.ofbiz.entity.GenericDelegator.createOrStore(GenericDelegator.java:921)
+org.ofbiz.entity.GenericDelegator.createOrStore(GenericDelegator.java:951)
+org.ofbiz.webapp.stats.ServerHitBin.saveHit(ServerHitBin.java:721)
+org.ofbiz.webapp.stats.ServerHitBin.countHit(ServerHitBin.java:219)
+org.ofbiz.webapp.stats.ServerHitBin.countHit(ServerHitBin.java:85)
+org.ofbiz.webapp.stats.ServerHitBin.countRequest(ServerHitBin.java:63)
+org.ofbiz.webapp.control.ControlServlet.doGet(ControlServlet.java:322)
+org.ofbiz.webapp.control.ControlServlet.doPost(ControlServlet.java:91)
+javax.servlet.http.HttpServlet.service(HttpServlet.java:637)
+javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+org.ofbiz.webapp.control.ContextFilter.doFilter(ContextFilter.java:270)
+org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:555)
+org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:298)
+org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:852)
+org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:588)
+org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+java.lang.Thread.run(Thread.java:619)
+--------------------------------------------------------------------------------
+
+2012-05-07 22:27:32,457 (http-0.0.0.0-8080-2) [   GenericDelegator.java:932:ERROR] 
+---- exception report ----------------------------------------------------------
+Failure in createOrStore operation for entity [ServerHit]: org.ofbiz.entity.GenericEntityNotFoundException: Tried to update an entity that does not exist.. Rolling back transaction.
+Exception: org.ofbiz.entity.GenericEntityNotFoundException
+Message: Tried to update an entity that does not exist.
+---- stack trace ---------------------------------------------------------------
+org.ofbiz.entity.GenericEntityNotFoundException: Tried to update an entity that does not exist.
+org.ofbiz.entity.datasource.GenericDAO.singleUpdate(GenericDAO.java:285)
+org.ofbiz.entity.datasource.GenericDAO.customUpdate(GenericDAO.java:216)
+org.ofbiz.entity.datasource.GenericDAO.update(GenericDAO.java:210)
+org.ofbiz.entity.datasource.GenericHelperDAO.store(GenericHelperDAO.java:172)
+org.ofbiz.entity.GenericDelegator.store(GenericDelegator.java:1354)
+org.ofbiz.entity.GenericDelegator.createOrStore(GenericDelegator.java:921)
+org.ofbiz.entity.GenericDelegator.createOrStore(GenericDelegator.java:951)
+org.ofbiz.webapp.stats.ServerHitBin.saveHit(ServerHitBin.java:721)
+org.ofbiz.webapp.stats.ServerHitBin.countHit(ServerHitBin.java:219)
+org.ofbiz.webapp.stats.ServerHitBin.countHit(ServerHitBin.java:85)
+org.ofbiz.webapp.stats.ServerHitBin.countRequest(ServerHitBin.java:63)
+org.ofbiz.webapp.control.ControlServlet.doGet(ControlServlet.java:322)
+org.ofbiz.webapp.control.ControlServlet.doPost(ControlServlet.java:91)
+javax.servlet.http.HttpServlet.service(HttpServlet.java:637)
+javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+org.ofbiz.webapp.control.ContextFilter.doFilter(ContextFilter.java:270)
+org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:555)
+org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:298)
+org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:852)
+org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:588)
+org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+java.lang.Thread.run(Thread.java:619)
+--------------------------------------------------------------------------------
+
+2012-05-07 22:27:32,459 (http-0.0.0.0-8080-2) [       ServerHitBin.java:725:ERROR] 
+---- exception report ----------------------------------------------------------
+Could not save ServerHit:
+Exception: org.ofbiz.entity.GenericEntityNotFoundException
+Message: Tried to update an entity that does not exist.
+---- stack trace ---------------------------------------------------------------
+org.ofbiz.entity.GenericEntityNotFoundException: Tried to update an entity that does not exist.
+org.ofbiz.entity.datasource.GenericDAO.singleUpdate(GenericDAO.java:285)
+org.ofbiz.entity.datasource.GenericDAO.customUpdate(GenericDAO.java:216)
+org.ofbiz.entity.datasource.GenericDAO.update(GenericDAO.java:210)
+org.ofbiz.entity.datasource.GenericHelperDAO.store(GenericHelperDAO.java:172)
+org.ofbiz.entity.GenericDelegator.store(GenericDelegator.java:1354)
+org.ofbiz.entity.GenericDelegator.createOrStore(GenericDelegator.java:921)
+org.ofbiz.entity.GenericDelegator.createOrStore(GenericDelegator.java:951)
+org.ofbiz.webapp.stats.ServerHitBin.saveHit(ServerHitBin.java:721)
+org.ofbiz.webapp.stats.ServerHitBin.countHit(ServerHitBin.java:219)
+org.ofbiz.webapp.stats.ServerHitBin.countHit(ServerHitBin.java:85)
+org.ofbiz.webapp.stats.ServerHitBin.countRequest(ServerHitBin.java:63)
+org.ofbiz.webapp.control.ControlServlet.doGet(ControlServlet.java:322)
+org.ofbiz.webapp.control.ControlServlet.doPost(ControlServlet.java:91)
+javax.servlet.http.HttpServlet.service(HttpServlet.java:637)
+javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+org.ofbiz.webapp.control.ContextFilter.doFilter(ContextFilter.java:270)
+org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:555)
+org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:298)
+org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:852)
+org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:588)
+org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+java.lang.Thread.run(Thread.java:619)
+--------------------------------------------------------------------------------
+
+2012-05-07 22:27:32,512 (http-0.0.0.0-8080-3) [       SQLProcessor.java:424:ERROR] SQL Exception while executing the following: INSERT INTO SERVER_HIT (VISIT_ID, CONTENT_ID, HIT_START_DATE_TIME, HIT_TYPE_ID, NUM_OF_BYTES, RUNNING_TIME_MILLIS, USER_LOGIN_ID, STATUS_ID, REQUEST_URL, REFERRER_URL, SERVER_IP_ADDRESS, SERVER_HOST_NAME, LAST_UPDATED_STAMP, LAST_UPDATED_TX_STAMP, CREATED_STAMP, CREATED_TX_STAMP, INTERNAL_CONTENT_ID, PARTY_ID, ID_BY_IP_CONTACT_MECH_ID, REF_BY_WEB_CONTACT_MECH_ID) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2012-05-07 22:27:32,513 (http-0.0.0.0-8080-3) [         GenericDAO.java:174:ERROR] Error while inserting [GenericEntity:ServerHit][contentId,crmsfa.gwtGetViewPreference(java.lang.String)][createdStamp,2012-05-07 22:27:32.396(java.sql.Timestamp)][createdTxStamp,2012-05-07 22:27:32.388(java.sql.Timestamp)][hitStartDateTime,2012-05-07 22:27:30.197(java.sql.Timestamp)][hitTypeId,REQUEST(java.lang.String)][lastUpdatedStamp,2012-05-07 22:27:32.396(java.sql.Timestamp)][lastUpdatedTxStamp,2012-05-07 22:27:32.388(java.sql.Timestamp)][partyId,admin(java.lang.String)][referrerUrl,http://localhost:8080/crmsfa/control/main?externalLoginKey=EL274482860164(java.lang.String)][requestUrl,http://localhost:8080/crmsfa/control/gwtGetViewPreference(java.lang.String)][runningTimeMillis,2167(java.lang.Long)][serverHostName,sumit-PC(java.lang.String)][serverIpAddress,192.168.1.10(java.lang.String)][userLoginId,admin(java.lang.String)][visitId,10261(java.lang.String)]
+2012-05-07 22:27:32,516 (http-0.0.0.0-8080-3) [   GenericDelegator.java:894:ERROR] 
+---- exception report ----------------------------------------------------------
+Failure in create operation for entity [ServerHit]: org.ofbiz.entity.GenericEntityException: Error while inserting ServerHit (SQL Exception: (Duplicate entry '10261-crmsfa.gwtGetViewPreference-2012-05-07 22:27:30-REQUEST' for key 'PRIMARY')). Rolling back transaction.
+Exception: org.ofbiz.entity.GenericEntityException
+Message: Error while inserting ServerHit (SQL Exception: (Duplicate entry '10261-crmsfa.gwtGetViewPreference-2012-05-07 22:27:30-REQUEST' for key 'PRIMARY'))
+---- cause ---------------------------------------------------------------------
+Exception: org.ofbiz.entity.GenericDataSourceException
+Message: SQL Exception: (Duplicate entry '10261-crmsfa.gwtGetViewPreference-2012-05-07 22:27:30-REQUEST' for key 'PRIMARY')
+---- cause ---------------------------------------------------------------------
+Exception: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException
+Message: Duplicate entry '10261-crmsfa.gwtGetViewPreference-2012-05-07 22:27:30-REQUEST' for key 'PRIMARY'
+---- stack trace ---------------------------------------------------------------
+com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Duplicate entry '10261-crmsfa.gwtGetViewPreference-2012-05-07 22:27:30-REQUEST' for key 'PRIMARY'
+sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:39)
+sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:27)
+java.lang.reflect.Constructor.newInstance(Constructor.java:513)
+com.mysql.jdbc.Util.handleNewInstance(Util.java:406)
+com.mysql.jdbc.Util.getInstance(Util.java:381)
+com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1015)
+com.mysql.jdbc.SQLError.createSQLException(SQLError.java:956)
+com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3558)
+com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3490)
+com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:1959)
+com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2109)
+com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2648)
+com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:2077)
+com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2362)
+com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2280)
+com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2265)
+org.ofbiz.minerva.pool.jdbc.PreparedStatementInPool.executeUpdate(PreparedStatementInPool.java:82)
+org.ofbiz.entity.jdbc.SQLProcessor.executeUpdate(SQLProcessor.java:420)
+org.ofbiz.entity.datasource.GenericDAO.singleInsert(GenericDAO.java:169)
+org.ofbiz.entity.datasource.GenericDAO.insert(GenericDAO.java:115)
+org.ofbiz.entity.datasource.GenericHelperDAO.create(GenericHelperDAO.java:65)
+org.ofbiz.entity.GenericDelegator.create(GenericDelegator.java:872)
+org.ofbiz.entity.GenericDelegator.createOrStore(GenericDelegator.java:923)
+org.ofbiz.entity.GenericDelegator.createOrStore(GenericDelegator.java:951)
+org.ofbiz.webapp.stats.ServerHitBin.saveHit(ServerHitBin.java:721)
+org.ofbiz.webapp.stats.ServerHitBin.countHit(ServerHitBin.java:219)
+org.ofbiz.webapp.stats.ServerHitBin.countHit(ServerHitBin.java:85)
+org.ofbiz.webapp.stats.ServerHitBin.countRequest(ServerHitBin.java:63)
+org.ofbiz.webapp.control.ControlServlet.doGet(ControlServlet.java:322)
+org.ofbiz.webapp.control.ControlServlet.doPost(ControlServlet.java:91)
+javax.servlet.http.HttpServlet.service(HttpServlet.java:637)
+javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+org.ofbiz.webapp.control.ContextFilter.doFilter(ContextFilter.java:270)
+org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:555)
+org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:298)
+org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:852)
+org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:588)
+org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+java.lang.Thread.run(Thread.java:619)
+--------------------------------------------------------------------------------
+
+2012-05-07 22:27:32,518 (http-0.0.0.0-8080-3) [   GenericDelegator.java:932:ERROR] 
+---- exception report ----------------------------------------------------------
+Failure in createOrStore operation for entity [ServerHit]: org.ofbiz.entity.GenericEntityException: Error while inserting ServerHit (SQL Exception: (Duplicate entry '10261-crmsfa.gwtGetViewPreference-2012-05-07 22:27:30-REQUEST' for key 'PRIMARY')). Rolling back transaction.
+Exception: org.ofbiz.entity.GenericEntityException
+Message: Error while inserting ServerHit (SQL Exception: (Duplicate entry '10261-crmsfa.gwtGetViewPreference-2012-05-07 22:27:30-REQUEST' for key 'PRIMARY'))
+---- cause ---------------------------------------------------------------------
+Exception: org.ofbiz.entity.GenericDataSourceException
+Message: SQL Exception: (Duplicate entry '10261-crmsfa.gwtGetViewPreference-2012-05-07 22:27:30-REQUEST' for key 'PRIMARY')
+---- cause ---------------------------------------------------------------------
+Exception: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException
+Message: Duplicate entry '10261-crmsfa.gwtGetViewPreference-2012-05-07 22:27:30-REQUEST' for key 'PRIMARY'
+---- stack trace ---------------------------------------------------------------
+com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Duplicate entry '10261-crmsfa.gwtGetViewPreference-2012-05-07 22:27:30-REQUEST' for key 'PRIMARY'
+sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:39)
+sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:27)
+java.lang.reflect.Constructor.newInstance(Constructor.java:513)
+com.mysql.jdbc.Util.handleNewInstance(Util.java:406)
+com.mysql.jdbc.Util.getInstance(Util.java:381)
+com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1015)
+com.mysql.jdbc.SQLError.createSQLException(SQLError.java:956)
+com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3558)
+com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3490)
+com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:1959)
+com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2109)
+com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2648)
+com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:2077)
+com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2362)
+com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2280)
+com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2265)
+org.ofbiz.minerva.pool.jdbc.PreparedStatementInPool.executeUpdate(PreparedStatementInPool.java:82)
+org.ofbiz.entity.jdbc.SQLProcessor.executeUpdate(SQLProcessor.java:420)
+org.ofbiz.entity.datasource.GenericDAO.singleInsert(GenericDAO.java:169)
+org.ofbiz.entity.datasource.GenericDAO.insert(GenericDAO.java:115)
+org.ofbiz.entity.datasource.GenericHelperDAO.create(GenericHelperDAO.java:65)
+org.ofbiz.entity.GenericDelegator.create(GenericDelegator.java:872)
+org.ofbiz.entity.GenericDelegator.createOrStore(GenericDelegator.java:923)
+org.ofbiz.entity.GenericDelegator.createOrStore(GenericDelegator.java:951)
+org.ofbiz.webapp.stats.ServerHitBin.saveHit(ServerHitBin.java:721)
+org.ofbiz.webapp.stats.ServerHitBin.countHit(ServerHitBin.java:219)
+org.ofbiz.webapp.stats.ServerHitBin.countHit(ServerHitBin.java:85)
+org.ofbiz.webapp.stats.ServerHitBin.countRequest(ServerHitBin.java:63)
+org.ofbiz.webapp.control.ControlServlet.doGet(ControlServlet.java:322)
+org.ofbiz.webapp.control.ControlServlet.doPost(ControlServlet.java:91)
+javax.servlet.http.HttpServlet.service(HttpServlet.java:637)
+javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+org.ofbiz.webapp.control.ContextFilter.doFilter(ContextFilter.java:270)
+org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:555)
+org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:298)
+org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:852)
+org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:588)
+org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+java.lang.Thread.run(Thread.java:619)
+--------------------------------------------------------------------------------
+
+2012-05-07 22:27:32,525 (http-0.0.0.0-8080-3) [       ServerHitBin.java:725:ERROR] 
+---- exception report ----------------------------------------------------------
+Could not save ServerHit:
+Exception: org.ofbiz.entity.GenericEntityException
+Message: Error while inserting ServerHit (SQL Exception: (Duplicate entry '10261-crmsfa.gwtGetViewPreference-2012-05-07 22:27:30-REQUEST' for key 'PRIMARY'))
+---- cause ---------------------------------------------------------------------
+Exception: org.ofbiz.entity.GenericDataSourceException
+Message: SQL Exception: (Duplicate entry '10261-crmsfa.gwtGetViewPreference-2012-05-07 22:27:30-REQUEST' for key 'PRIMARY')
+---- cause ---------------------------------------------------------------------
+Exception: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException
+Message: Duplicate entry '10261-crmsfa.gwtGetViewPreference-2012-05-07 22:27:30-REQUEST' for key 'PRIMARY'
+---- stack trace ---------------------------------------------------------------
+com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Duplicate entry '10261-crmsfa.gwtGetViewPreference-2012-05-07 22:27:30-REQUEST' for key 'PRIMARY'
+sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:39)
+sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:27)
+java.lang.reflect.Constructor.newInstance(Constructor.java:513)
+com.mysql.jdbc.Util.handleNewInstance(Util.java:406)
+com.mysql.jdbc.Util.getInstance(Util.java:381)
+com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1015)
+com.mysql.jdbc.SQLError.createSQLException(SQLError.java:956)
+com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3558)
+com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3490)
+com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:1959)
+com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2109)
+com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2648)
+com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:2077)
+com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2362)
+com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2280)
+com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:2265)
+org.ofbiz.minerva.pool.jdbc.PreparedStatementInPool.executeUpdate(PreparedStatementInPool.java:82)
+org.ofbiz.entity.jdbc.SQLProcessor.executeUpdate(SQLProcessor.java:420)
+org.ofbiz.entity.datasource.GenericDAO.singleInsert(GenericDAO.java:169)
+org.ofbiz.entity.datasource.GenericDAO.insert(GenericDAO.java:115)
+org.ofbiz.entity.datasource.GenericHelperDAO.create(GenericHelperDAO.java:65)
+org.ofbiz.entity.GenericDelegator.create(GenericDelegator.java:872)
+org.ofbiz.entity.GenericDelegator.createOrStore(GenericDelegator.java:923)
+org.ofbiz.entity.GenericDelegator.createOrStore(GenericDelegator.java:951)
+org.ofbiz.webapp.stats.ServerHitBin.saveHit(ServerHitBin.java:721)
+org.ofbiz.webapp.stats.ServerHitBin.countHit(ServerHitBin.java:219)
+org.ofbiz.webapp.stats.ServerHitBin.countHit(ServerHitBin.java:85)
+org.ofbiz.webapp.stats.ServerHitBin.countRequest(ServerHitBin.java:63)
+org.ofbiz.webapp.control.ControlServlet.doGet(ControlServlet.java:322)
+org.ofbiz.webapp.control.ControlServlet.doPost(ControlServlet.java:91)
+javax.servlet.http.HttpServlet.service(HttpServlet.java:637)
+javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+org.ofbiz.webapp.control.ContextFilter.doFilter(ContextFilter.java:270)
+org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:555)
+org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:298)
+org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:852)
+org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:588)
+org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+java.lang.Thread.run(Thread.java:619)
+--------------------------------------------------------------------------------
+
+2012-05-07 22:27:32,528 (http-0.0.0.0-8080-3) [     RequestHandler.java:194:ERROR] Got a insecure (non-https) form POST to a secure (http) request [gwtGetViewPreference], returning error
+2012-05-07 22:27:32,651 (http-0.0.0.0-8080-3) [     RequestHandler.java:194:ERROR] Got a insecure (non-https) form POST to a secure (http) request [gwtSetViewPreference], returning error
+2012-05-07 22:27:32,661 (http-0.0.0.0-8080-6) [     RequestHandler.java:194:ERROR] Got a insecure (non-https) form POST to a secure (http) request [gwtSetViewPreference], returning error
+2012-05-07 22:27:32,682 (http-0.0.0.0-8080-2) [     RequestHandler.java:194:ERROR] Got a insecure (non-https) form POST to a secure (http) request [gwtSetViewPreference], returning error
+2012-05-07 22:27:32,713 (http-0.0.0.0-8080-4) [     RequestHandler.java:194:ERROR] Got a insecure (non-https) form POST to a secure (http) request [gwtSetViewPreference], returning error
+2012-05-07 22:27:35,163 (http-0.0.0.0-8080-5) [     RequestHandler.java:194:ERROR] Got a insecure (non-https) form POST to a secure (http) request [gwtSetViewPreference], returning error
+2012-05-07 22:30:09,497 (http-0.0.0.0-8080-1) [     RequestHandler.java:194:ERROR] Got a insecure (non-https) form POST to a secure (http) request [gwtSuggestProductStores], returning error
+2012-05-07 22:30:22,186 (http-0.0.0.0-8080-3) [     RequestHandler.java:194:ERROR] Got a insecure (non-https) form POST to a secure (http) request [gwtFindSalesOrders], returning error
+2012-05-07 22:30:32,363 (http-0.0.0.0-8080-5) [     RequestHandler.java:194:ERROR] Got a insecure (non-https) form POST to a secure (http) request [gwtFindSalesOrders], returning error
+2012-05-07 22:30:40,259 (http-0.0.0.0-8080-5) [     RequestHandler.java:194:ERROR] Got a insecure (non-https) form POST to a secure (http) request [gwtFindSalesOrders], returning error
+2012-05-07 22:30:41,546 (http-0.0.0.0-8080-5) [     RequestHandler.java:194:ERROR] Got a insecure (non-https) form POST to a secure (http) request [gwtFindSalesOrders], returning error
+2012-05-07 22:30:54,688 (http-0.0.0.0-8080-5) [     RequestHandler.java:194:ERROR] Got a insecure (non-https) form POST to a secure (http) request [gwtSuggestOrderStatus], returning error
+2012-05-07 22:31:09,932 (http-0.0.0.0-8080-5) [     RequestHandler.java:194:ERROR] Got a insecure (non-https) form POST to a secure (http) request [gwtFindSalesOrders], returning error
+2012-05-07 22:31:36,257 (http-0.0.0.0-8080-3) [     RequestHandler.java:194:ERROR] Got a insecure (non-https) form POST to a secure (http) request [gwtGetViewPreference], returning error
+2012-05-07 22:31:36,366 (http-0.0.0.0-8080-1) [     RequestHandler.java:194:ERROR] Got a insecure (non-https) form POST to a secure (http) request [gwtGetViewPreference], returning error
+2012-05-07 22:31:36,427 (http-0.0.0.0-8080-5) [     RequestHandler.java:194:ERROR] Got a insecure (non-https) form POST to a secure (http) request [gwtGetViewPreference], returning error
+2012-05-07 22:31:36,479 (http-0.0.0.0-8080-3) [     RequestHandler.java:194:ERROR] Got a insecure (non-https) form POST to a secure (http) request [gwtGetViewPreference], returning error
+2012-05-07 22:31:36,505 (http-0.0.0.0-8080-1) [     RequestHandler.java:194:ERROR] Got a insecure (non-https) form POST to a secure (http) request [gwtSuggestOpportunityStages], returning error
+2012-05-07 22:31:36,535 (http-0.0.0.0-8080-5) [     RequestHandler.java:194:ERROR] Got a insecure (non-https) form POST to a secure (http) request [gwtGetViewPreference], returning error
+2012-05-07 22:31:36,924 (http-0.0.0.0-8080-5) [     RequestHandler.java:194:ERROR] Got a insecure (non-https) form POST to a secure (http) request [gwtSetViewPreference], returning error
+2012-05-07 22:31:36,943 (http-0.0.0.0-8080-1) [     RequestHandler.java:194:ERROR] Got a insecure (non-https) form POST to a secure (http) request [gwtSetViewPreference], returning error
+2012-05-07 22:31:36,950 (http-0.0.0.0-8080-3) [     RequestHandler.java:194:ERROR] Got a insecure (non-https) form POST to a secure (http) request [gwtSetViewPreference], returning error
+2012-05-07 22:31:36,966 (http-0.0.0.0-8080-4) [     RequestHandler.java:194:ERROR] Got a insecure (non-https) form POST to a secure (http) request [gwtSetViewPreference], returning error
+2012-05-07 22:31:36,982 (http-0.0.0.0-8080-2) [     RequestHandler.java:194:ERROR] Got a insecure (non-https) form POST to a secure (http) request [gwtSetViewPreference], returning error
+2012-05-07 22:31:44,079 (http-0.0.0.0-8080-1) [     RequestHandler.java:194:ERROR] Got a insecure (non-https) form POST to a secure (http) request [gwtGetViewPreference], returning error
+2012-05-07 22:31:44,114 (http-0.0.0.0-8080-3) [     RequestHandler.java:194:ERROR] Got a insecure (non-https) form POST to a secure (http) request [gwtGetViewPreference], returning error
+2012-05-07 22:31:44,211 (http-0.0.0.0-8080-1) [     RequestHandler.java:194:ERROR] Got a insecure (non-https) form POST to a secure (http) request [gwtGetViewPreference], returning error
+2012-05-07 22:31:44,219 (http-0.0.0.0-8080-5) [     RequestHandler.java:194:ERROR] Got a insecure (non-https) form POST to a secure (http) request [gwtGetViewPreference], returning error
+2012-05-07 22:31:44,235 (http-0.0.0.0-8080-3) [     RequestHandler.java:194:ERROR] Got a insecure (non-https) form POST to a secure (http) request [gwtSuggestOpportunityStages], returning error
+2012-05-07 22:31:44,345 (http-0.0.0.0-8080-5) [     RequestHandler.java:194:ERROR] Got a insecure (non-https) form POST to a secure (http) request [gwtGetViewPreference], returning error
+2012-05-07 22:31:44,803 (http-0.0.0.0-8080-5) [     RequestHandler.java:194:ERROR] Got a insecure (non-https) form POST to a secure (http) request [gwtSetViewPreference], returning error
+2012-05-07 22:31:44,830 (http-0.0.0.0-8080-3) [     RequestHandler.java:194:ERROR] Got a insecure (non-https) form POST to a secure (http) request [gwtSetViewPreference], returning error
+2012-05-07 22:31:44,841 (http-0.0.0.0-8080-2) [     RequestHandler.java:194:ERROR] Got a insecure (non-https) form POST to a secure (http) request [gwtSetViewPreference], returning error
+2012-05-07 22:31:44,842 (http-0.0.0.0-8080-1) [     RequestHandler.java:194:ERROR] Got a insecure (non-https) form POST to a secure (http) request [gwtSetViewPreference], returning error
+2012-05-07 22:31:44,894 (http-0.0.0.0-8080-4) [     RequestHandler.java:194:ERROR] Got a insecure (non-https) form POST to a secure (http) request [gwtSetViewPreference], returning error
+2012-05-07 22:31:56,449 (http-0.0.0.0-8080-5) [     RequestHandler.java:194:ERROR] Got a insecure (non-https) form POST to a secure (http) request [gwtGetViewPreference], returning error
+2012-05-07 22:31:56,496 (http-0.0.0.0-8080-1) [     RequestHandler.java:194:ERROR] Got a insecure (non-https) form POST to a secure (http) request [gwtGetViewPreference], returning error
+2012-05-07 22:31:56,548 (http-0.0.0.0-8080-3) [     RequestHandler.java:194:ERROR] Got a insecure (non-https) form POST to a secure (http) request [gwtGetViewPreference], returning error
+2012-05-07 22:31:56,600 (http-0.0.0.0-8080-5) [     RequestHandler.java:194:ERROR] Got a insecure (non-https) form POST to a secure (http) request [gwtGetViewPreference], returning error
+2012-05-07 22:31:56,635 (http-0.0.0.0-8080-1) [     RequestHandler.java:194:ERROR] Got a insecure (non-https) form POST to a secure (http) request [gwtSuggestOpportunityStages], returning error
+2012-05-07 22:31:56,676 (http-0.0.0.0-8080-3) [     RequestHandler.java:194:ERROR] Got a insecure (non-https) form POST to a secure (http) request [gwtGetViewPreference], returning error
+2012-05-07 22:31:57,192 (http-0.0.0.0-8080-5) [     RequestHandler.java:194:ERROR] Got a insecure (non-https) form POST to a secure (http) request [gwtSetViewPreference], returning error
+2012-05-07 22:31:57,209 (http-0.0.0.0-8080-1) [     RequestHandler.java:194:ERROR] Got a insecure (non-https) form POST to a secure (http) request [gwtSetViewPreference], returning error
+2012-05-07 22:31:57,229 (http-0.0.0.0-8080-3) [     RequestHandler.java:194:ERROR] Got a insecure (non-https) form POST to a secure (http) request [gwtSetViewPreference], returning error
+2012-05-07 22:31:57,230 (http-0.0.0.0-8080-2) [     RequestHandler.java:194:ERROR] Got a insecure (non-https) form POST to a secure (http) request [gwtSetViewPreference], returning error
+2012-05-07 22:31:57,233 (http-0.0.0.0-8080-4) [     RequestHandler.java:194:ERROR] Got a insecure (non-https) form POST to a secure (http) request [gwtSetViewPreference], returning error
+2012-05-07 23:56:45,842 (http-0.0.0.0-8080-2) [  WarehouseSecurity.java:211:ERROR] Missing WarehouseSecurity instance in the session or context to perform the permission check
+2012-05-07 23:56:45,844 (http-0.0.0.0-8080-2) [  WarehouseSecurity.java:211:ERROR] Missing WarehouseSecurity instance in the session or context to perform the permission check
+2012-05-07 23:56:45,845 (http-0.0.0.0-8080-2) [  WarehouseSecurity.java:211:ERROR] Missing WarehouseSecurity instance in the session or context to perform the permission check
+2012-05-07 23:56:45,846 (http-0.0.0.0-8080-2) [  WarehouseSecurity.java:211:ERROR] Missing WarehouseSecurity instance in the session or context to perform the permission check
+2012-05-07 23:56:56,942 (http-0.0.0.0-8080-2) [     RequestHandler.java:194:ERROR] Got a insecure (non-https) form POST to a secure (http) request [login], returning error
+2012-05-07 23:57:36,723 (http-0.0.0.0-8080-2) [     RequestHandler.java:194:ERROR] Got a insecure (non-https) form POST to a secure (http) request [findShipmentReceipt], returning error
+2012-05-07 23:57:54,221 (http-0.0.0.0-8080-2) [     RequestHandler.java:194:ERROR] Got a insecure (non-https) form POST to a secure (http) request [FindFacilityPhysicalInventory], returning error
+2012-05-07 23:59:23,130 (http-0.0.0.0-8080-2) [     RequestHandler.java:194:ERROR] Got a insecure (non-https) form POST to a secure (http) request [createPhysicalVariances], returning error
+2012-05-07 23:59:44,510 (http-0.0.0.0-8080-2) [     RequestHandler.java:194:ERROR] Got a insecure (non-https) form POST to a secure (http) request [FindFacilityPhysicalInventory], returning error
+2012-05-08 00:02:18,445 (http-0.0.0.0-8080-2) [  WarehouseSecurity.java:211:ERROR] Missing WarehouseSecurity instance in the session or context to perform the permission check
+2012-05-08 00:02:18,445 (http-0.0.0.0-8080-2) [  WarehouseSecurity.java:211:ERROR] Missing WarehouseSecurity instance in the session or context to perform the permission check
+2012-05-08 00:02:18,445 (http-0.0.0.0-8080-2) [  WarehouseSecurity.java:211:ERROR] Missing WarehouseSecurity instance in the session or context to perform the permission check
+2012-05-08 00:02:18,445 (http-0.0.0.0-8080-2) [  WarehouseSecurity.java:211:ERROR] Missing WarehouseSecurity instance in the session or context to perform the permission check

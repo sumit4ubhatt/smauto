@@ -1,0 +1,2 @@
+127.0.0.1 - - [11/Apr/2012:23:00:46 +0530] "GET /work/control/main HTTP/1.1" 200 9247 "-" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:11.0) Gecko/20100101 Firefox/11.0"
+127.0.0.1 - - [11/Apr/2012:23:00:56 +0530] "POST /work/control/login HTTP/1.1" 200 16462 "http://localhost:8080/work/control/main" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:11.0) Gecko/20100101 Firefox/11.0"

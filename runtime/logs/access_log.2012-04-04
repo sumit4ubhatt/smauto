@@ -1,0 +1,4 @@
+0:0:0:0:0:0:0:1 - - [04/Apr/2012:00:14:56 +0530] "GET /opentaps/ HTTP/1.1" 400 - "-" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:8.0.1) Gecko/20100101 Firefox/8.0.1"
+0:0:0:0:0:0:0:1 - - [04/Apr/2012:00:14:56 +0530] "GET /favicon.ico HTTP/1.1" 400 - "-" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:8.0.1) Gecko/20100101 Firefox/8.0.1"
+0:0:0:0:0:0:0:1 - - [04/Apr/2012:00:15:04 +0530] "GET /work/ HTTP/1.1" 302 - "-" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:8.0.1) Gecko/20100101 Firefox/8.0.1"
+0:0:0:0:0:0:0:1 - - [04/Apr/2012:00:15:15 +0530] "GET /work/control/main HTTP/1.1" 200 9124 "-" "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:8.0.1) Gecko/20100101 Firefox/8.0.1"
