@@ -80,7 +80,7 @@ public class OrderInventoryService extends DomainService implements OrderInvento
     private static final String MODULE = OrderInventoryServiceInterface.class.getName();
 
     private String inventoryTransferId;
-
+    
     private String inventoryItemId;
     private String priorityOrderId;
     private String priorityOrderItemSeqId;
@@ -474,7 +474,13 @@ public class OrderInventoryService extends DomainService implements OrderInvento
                     setFacilityId(facility.getFacilityId());
                 }
             }
-
+            
+         // Sumit: Hacking here for implementing priority of facilities...
+            String partyId = order.getBillToPartyId();
+            FacilityPartyPriority facilityPartyPriority = inventoryRepository.getPriorityFacilityForParty(partyId);
+            if(UtilValidate.isNotEmpty(facilityPartyPriority)) {
+            	setFacilityId(facilityPartyPriority.getFacilityId());
+            }
             if (facility == null && UtilValidate.isNotEmpty(facilityId)) {
                 facility = inventoryRepository.getFacilityById(facilityId);
             }
@@ -514,39 +520,49 @@ public class OrderInventoryService extends DomainService implements OrderInvento
             InventoryItem lastNonSerInventoryItem = null;
 
             Debug.logInfo("reserveProductInventory: parameters for inventory items lookup, product [" + product.getProductId() + "] reservationOrder [" + reservationOrder + "] facilityId [" + facilityId + "] containerId [" + containerId + "]", MODULE);
-
+            
+            
+            
+            Debug.logInfo("reserveProductInventory: still has " + quantityNotReserved + " looking for inventory in other locations", MODULE);
+            Boolean otherLocation = false;
+            List<InventoryItem> inventoryItems = null;
+                inventoryItems = inventoryRepository.getInventoryItems(product, null, reservationOrder, facilityId, containerId);
+                if (UtilValidate.isNotEmpty(inventoryItems)) {
+                	otherLocation = true;
+                    for (InventoryItem inventory : inventoryItems) {
+                        lastNonSerInventoryItem = reserveInventoryItem(inventory, order, inventoryRepository);
+                    }
+                }
             /*
              * first reserve against InventoryItems in FLT_PICKLOC type locations,
              * then FLT_BULK locations, then InventoryItems with no locations.
              */
-            Debug.logInfo("reserveProductInventory: still has " + quantityNotReserved + " looking for inventory in PRIMARY locations", MODULE);
-            List<InventoryItem> inventoryItems = inventoryRepository.getInventoryItems(product, FacilityLocationType.PRIMARY, reservationOrder, facilityId, containerId);
-            if (UtilValidate.isNotEmpty(inventoryItems)) {
-                for (InventoryItem inventory : inventoryItems) {
-                    lastNonSerInventoryItem = reserveInventoryItem(inventory, order, inventoryRepository);
-                }
+            if(!otherLocation){
+	            Debug.logInfo("reserveProductInventory: still has " + quantityNotReserved + " looking for inventory in PRIMARY locations", MODULE);
+	            if (quantityNotReserved.compareTo(BigDecimal.ZERO) > 0) {
+		            inventoryItems = inventoryRepository.getInventoryItems(product, FacilityLocationType.PRIMARY, reservationOrder, facilityId, containerId);
+		            if (UtilValidate.isNotEmpty(inventoryItems)) {
+		                for (InventoryItem inventory : inventoryItems) {
+		                    lastNonSerInventoryItem = reserveInventoryItem(inventory, order, inventoryRepository);
+		                }
+		            }
+	            }
             }
 
             // try the FLT_BULK locations if we need more items
-            Debug.logInfo("reserveProductInventory: still has " + quantityNotReserved + " looking for inventory in BULK locations", MODULE);
-            if (quantityNotReserved.compareTo(BigDecimal.ZERO) > 0) {
-                inventoryItems = inventoryRepository.getInventoryItems(product, FacilityLocationType.BULK, reservationOrder, facilityId, containerId);
-                if (UtilValidate.isNotEmpty(inventoryItems)) {
-                    for (InventoryItem inventory : inventoryItems) {
-                        lastNonSerInventoryItem = reserveInventoryItem(inventory, order, inventoryRepository);
-                    }
-                }
+            if(!otherLocation){
+	            Debug.logInfo("reserveProductInventory: still has " + quantityNotReserved + " looking for inventory in BULK locations", MODULE);
+	            if (quantityNotReserved.compareTo(BigDecimal.ZERO) > 0) {
+	                inventoryItems = inventoryRepository.getInventoryItems(product, FacilityLocationType.BULK, reservationOrder, facilityId, containerId);
+	                if (UtilValidate.isNotEmpty(inventoryItems)) {
+	                    for (InventoryItem inventory : inventoryItems) {
+	                        lastNonSerInventoryItem = reserveInventoryItem(inventory, order, inventoryRepository);
+	                    }
+	                }
+	            }
             }
 
-            Debug.logInfo("reserveProductInventory: still has " + quantityNotReserved + " looking for inventory in other locations", MODULE);
-            if (quantityNotReserved.compareTo(BigDecimal.ZERO) > 0) {
-                inventoryItems = inventoryRepository.getInventoryItems(product, null, reservationOrder, facilityId, containerId);
-                if (UtilValidate.isNotEmpty(inventoryItems)) {
-                    for (InventoryItem inventory : inventoryItems) {
-                        lastNonSerInventoryItem = reserveInventoryItem(inventory, order, inventoryRepository);
-                    }
-                }
-            }
+            
             Debug.logInfo("reserveProductInventory: still has " + quantityNotReserved, MODULE);
 
             // NOTE: We're not rounding inventory quantities right now to allow for fractional inventory counts
