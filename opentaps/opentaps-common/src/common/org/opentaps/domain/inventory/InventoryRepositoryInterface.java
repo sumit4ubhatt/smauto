@@ -275,8 +275,16 @@ public interface InventoryRepositoryInterface extends RepositoryInterface {
      * @return
      *     Instance of <code>InventoryTransfer</code>
      * @throws RepositoryException if an error occurs
+     * @throws EntityNotFoundException 
      * @throws EntityNotFoundException if transfer isn't found
      */
     public InventoryTransfer getInventoryTransferById(String inventoryTransferId) throws RepositoryException, EntityNotFoundException;
-
+   
+    /**
+     * 
+     * @param partyId
+     * @return
+     * @throws RepositoryException 
+     */
+    public FacilityPartyPriority getPriorityFacilityForParty(String partyId) throws RepositoryException;
 }
