@@ -19,6 +19,7 @@ package org.opentaps.domain.inventory;
 import java.util.List;
 
 import org.opentaps.base.entities.Facility;
+import org.opentaps.base.entities.FacilityPartyPriority;
 import org.opentaps.base.entities.InventoryItemTraceDetail;
 import org.opentaps.base.entities.InventoryItemValueHistory;
 import org.opentaps.base.entities.InventoryTransfer;
