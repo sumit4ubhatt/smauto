@@ -241,7 +241,18 @@ public class InventoryRepository extends Repository implements InventoryReposito
         }
         return result;
     }
-
+    
+    /** {@inheritDoc} */
+    public FacilityPartyPriority getPriorityFacilityForParty(String partyId) throws RepositoryException {
+        //return findList(FacilityPartyPriority.class, map(FacilityPartyPriority.Fields.partyId, partyId));
+        EntityCondition condition = EntityCondition.makeCondition("partyId", EntityOperator.EQUALS, partyId);
+        List<FacilityPartyPriority> facilityParty = findList(FacilityPartyPriority.class, condition, Arrays.asList("priority"));
+        if(UtilValidate.isNotEmpty(facilityParty)) {
+        	return facilityParty.get(0);
+        }
+        return null;
+    }
+    
     /** {@inheritDoc} */
     public List<InventoryTransfer> getPendingInventoryTransfers(InventoryItem inventoryItem) throws RepositoryException {
         return findList(InventoryTransfer.class, map(InventoryTransfer.Fields.inventoryItemId, inventoryItem.getInventoryItemId(), InventoryTransfer.Fields.statusId, "IXF_REQUESTED"));
