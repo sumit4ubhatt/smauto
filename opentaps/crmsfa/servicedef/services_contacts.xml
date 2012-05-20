@@ -66,6 +66,11 @@
         <!-- necessary for chaining with assignContactToAccount -->
         <attribute name="accountPartyId" type="String" mode="INOUT" optional="true"/>
         <attribute name="contactPartyId" type="String" mode="OUT" optional="false"/>
+        <!-- Party and Facility priority -->
+        <attribute name="warehousePriorityOne" type="String" mode="IN" optional="true"/>
+        <attribute name="warehousePriorityTwo" type="String" mode="IN" optional="true"/>
+        <attribute name="warehousePriorityThree" type="String" mode="IN" optional="true"/>
+        <attribute name="warehousePriorityFour" type="String" mode="IN" optional="true"/>
     </service>
 
     <service name="crmsfa.updateContact" engine="java" location="com.opensourcestrategies.crmsfa.contacts.ContactsServices" invoke="updateContact">
