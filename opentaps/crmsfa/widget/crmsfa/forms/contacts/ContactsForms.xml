@@ -40,6 +40,34 @@
         <field name="accountPartyId" title="${uiLabelMap.CrmInitialAccount}" position="1">
             <lookup target-form-name="LookupAccounts" size="20" maxlength="20"/>
         </field>
+        <field name="warehousePriorityOne" title="Warehouse Priority 1" position="2">
+            <drop-down allow-empty="true" current="selected">
+                <entity-options description="${facilityId} - ${facilityName}" entity-name="Facility" key-field-name="facilityId">
+                    <entity-constraint name="facilityTypeId" operator="equals" value="WAREHOUSE"/>
+                </entity-options>
+            </drop-down>
+        </field>
+        <field name="warehousePriorityTwo" title="Warehouse Priority 2" position="1">
+            <drop-down allow-empty="true" current="selected">
+                <entity-options description="${facilityId} - ${facilityName}" entity-name="Facility" key-field-name="facilityId">
+                    <entity-constraint name="facilityTypeId" operator="equals" value="WAREHOUSE"/>
+                </entity-options>
+            </drop-down>
+        </field>
+        <field name="warehousePriorityThree" title="Warehouse Priority 3" position="2">
+            <drop-down allow-empty="true" current="selected">
+                <entity-options description="${facilityId} - ${facilityName}" entity-name="Facility" key-field-name="facilityId">
+                    <entity-constraint name="facilityTypeId" operator="equals" value="WAREHOUSE"/>
+                </entity-options>
+            </drop-down>
+        </field>
+        <field name="warehousePriorityFour" title="Warehouse Priority 4" position="1">
+            <drop-down allow-empty="true" current="selected">
+                <entity-options description="${facilityId} - ${facilityName}" entity-name="Facility" key-field-name="facilityId">
+                    <entity-constraint name="facilityTypeId" operator="equals" value="WAREHOUSE"/>
+                </entity-options>
+            </drop-down>
+        </field>
         <field name="description" title="${uiLabelMap.CommonDescription}"><textarea/></field>
         <field name="importantNote" title="${uiLabelMap.CrmImportantNote}"><textarea/></field>
         <field name=" " widget-area-style="formSectionHeader" widget-style="formSectionHeaderTitle"><display description="${uiLabelMap.PartyContactInformation}"/> </field>
@@ -68,6 +96,7 @@
         <field name="generalCountryGeoId" title="${uiLabelMap.CommonCountry}" position="2" event="onChange" action="opentaps.swapStatesInDropdown(this,'generalStateProvinceGeoId')">
             <drop-down allow-empty="true" current="selected" no-current-selected-key="${configProperties.defaultCountryGeoId}">
                 <entity-options description="${geoName}" entity-name="Geo" key-field-name="geoId">
+                	<entity-constraint name="geoId" operator="equals" value="IND"/>
                     <entity-constraint name="geoTypeId" operator="equals" value="COUNTRY"/>
                     <entity-order-by field-name="geoName"/>
                 </entity-options>
