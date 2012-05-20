@@ -40,10 +40,13 @@
 package com.opensourcestrategies.crmsfa.contacts;
 
 import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+import java.util.Set;
 
 import com.opensourcestrategies.crmsfa.party.PartyHelper;
 import com.opensourcestrategies.crmsfa.security.CrmsfaSecurity;
@@ -154,7 +157,34 @@ public final class ContactsServices {
             if (ServiceUtil.isError(serviceResults)) {
                 return UtilMessage.createAndLogServiceError(serviceResults, "CrmErrorCreateContactFail", locale, MODULE);
             }
-
+            
+            //Sumit:  priority of warehouse for the specified party..
+            String priorityOne = (String)context.get("warehousePriorityOne");
+            String priorityTwo = (String)context.get("warehousePriorityTwo");
+            String priorityThree = (String)context.get("warehousePriorityThree");
+            String priorityFour = (String)context.get("warehousePriorityFour");
+            
+            if(UtilValidate.isNotEmpty(priorityOne) && UtilValidate.isNotEmpty(priorityTwo) && UtilValidate.isNotEmpty(priorityThree) && UtilValidate.isNotEmpty(priorityFour)) {
+            	Set<String> priorityList = new LinkedHashSet<String>();
+            	priorityList.add(priorityOne);
+            	priorityList.add(priorityTwo);
+            	priorityList.add(priorityThree);
+            	priorityList.add(priorityFour);
+            	List<GenericValue> warehousePriority = new ArrayList<GenericValue>();
+	            
+	            GenericValue facilityPriorityOne = delegator.makeValue("FacilityPartyPriority");
+	            Long count = 0L;
+	            for (String priority : priorityList) {
+	            	count++;
+		            facilityPriorityOne.set("facilityId", priority);
+		            facilityPriorityOne.set("partyId", contactPartyId);
+		            facilityPriorityOne.set("priority", count);
+		            facilityPriorityOne.set("thruDate", UtilDateTime.nowTimestamp());
+		            warehousePriority.add(facilityPriorityOne);
+	            }
+	            delegator.storeAll(warehousePriority);
+            }
+            
         } catch (GenericServiceException e) {
             return UtilMessage.createAndLogServiceError(e, "CrmErrorCreateContactFail", locale, MODULE);
         } catch (GenericEntityException e) {
