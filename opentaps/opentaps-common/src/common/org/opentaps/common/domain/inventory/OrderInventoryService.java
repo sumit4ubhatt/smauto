@@ -40,6 +40,7 @@ import org.opentaps.base.constants.InventoryItemTypeConstants;
 import org.opentaps.base.constants.ProductTypeConstants;
 import org.opentaps.base.constants.StatusItemConstants;
 import org.opentaps.base.entities.Facility;
+import org.opentaps.base.entities.FacilityPartyPriority;
 import org.opentaps.base.entities.InventoryTransfer;
 import org.opentaps.base.entities.OrderItemShipGrpInvRes;
 import org.opentaps.base.entities.ProductFacility;
