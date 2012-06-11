@@ -1098,7 +1098,7 @@ public class OrderServices {
             List resErrorMessages = new LinkedList();
             try {
                 reserveInventory(delegator, dispatcher, userLogin, locale, orderItemShipGroupInfo, dropShipGroupIds, itemValuesBySeqId,
-                        orderTypeId, productStoreId, resErrorMessages);
+                        orderTypeId, productStoreId, resErrorMessages, partyId);
             } catch (GeneralException e) {
                 return ServiceUtil.returnError(e.getMessage());
             }
@@ -1116,8 +1116,15 @@ public class OrderServices {
 
         return successResult;
     }
+    //sumit overloading this method as I need party id for warehouse priority
+    private static void reserveInventory(Delegator delegator, LocalDispatcher dispatcher, GenericValue userLogin, Locale locale,
+			List orderItemShipGroupInfo, List dropShipGroupIds, Map itemValuesBySeqId, String orderTypeId, String productStoreId, List resErrorMessages) throws GeneralException {
+    	String partyId = null;
+    	reserveInventory(delegator, dispatcher, userLogin, locale, orderItemShipGroupInfo, dropShipGroupIds, itemValuesBySeqId, orderTypeId, productStoreId, resErrorMessages, partyId);
+		
+	}
 
-    public static void reserveInventory(Delegator delegator, LocalDispatcher dispatcher, GenericValue userLogin, Locale locale, List orderItemShipGroupInfo, List dropShipGroupIds, Map itemValuesBySeqId, String orderTypeId, String productStoreId, List resErrorMessages) throws GeneralException {
+	public static void reserveInventory(Delegator delegator, LocalDispatcher dispatcher, GenericValue userLogin, Locale locale, List orderItemShipGroupInfo, List dropShipGroupIds, Map itemValuesBySeqId, String orderTypeId, String productStoreId, List resErrorMessages , String partyId) throws GeneralException {
         boolean isImmediatelyFulfilled = false;
         GenericValue productStore = null;
         if (UtilValidate.isNotEmpty(productStoreId)) {
@@ -1223,13 +1230,38 @@ public class OrderServices {
                                     }
                                 } else {
                                     // reserve the product
-                                    Map reserveInput = new HashMap();
+                                	// Sumit: Hacking here for implementing priority of facilities...
+                                	
+                                	Map reserveInput = new HashMap();
+                                	if(UtilValidate.isEmpty(shipGroupFacilityId)) {
+                                		Boolean isInventoryAvailable = false;
+                                		EntityCondition condition = EntityCondition.makeCondition("partyId", EntityOperator.EQUALS, partyId);
+                                		List<GenericValue> facilityPriorityList = delegator.findList("FacilityPartyPriority", condition, null, UtilMisc.toList("priority"), null, true);
+                                		if(UtilValidate.isNotEmpty(facilityPriorityList)) {
+                                			for (GenericValue facilityPriority : facilityPriorityList) {
+                                				String facilityId = facilityPriority.getString("facilityId");
+												Map<String, Object> getProductInventoryAvailableResult = dispatcher.runSync("getInventoryAvailableByFacility", UtilMisc.toMap("productId", orderItem.getString("productId"), "facilityId", facilityId));
+												if(UtilValidate.isNotEmpty(getProductInventoryAvailableResult)) {
+													BigDecimal availableToPromise = (BigDecimal) getProductInventoryAvailableResult.get("availableToPromiseTotal");
+													if (availableToPromise.compareTo(BigDecimal.ZERO) > 0) {
+														isInventoryAvailable = true;
+														reserveInput.put("facilityId", facilityId);
+														break;
+													}
+												}
+											}
+                                			if(!isInventoryAvailable) {
+                                				reserveInput.put("facilityId", facilityPriorityList.get(0).getString("facilityId"));
+                                			}
+                                		}
+                                	}
+                                    
                                     reserveInput.put("productStoreId", productStoreId);
                                     reserveInput.put("productId", orderItem.getString("productId"));
                                     reserveInput.put("orderId", orderItem.getString("orderId"));
                                     reserveInput.put("orderItemSeqId", orderItem.getString("orderItemSeqId"));
                                     reserveInput.put("shipGroupSeqId", orderItemShipGroupAssoc.getString("shipGroupSeqId"));
-                                    reserveInput.put("facilityId", shipGroupFacilityId);
+                                    //reserveInput.put("facilityId", shipGroupFacilityId);
                                     reserveInput.put("quantity", quantityToReserve);
                                     reserveInput.put("userLogin", userLogin);
                                     Map reserveResult = dispatcher.runSync("reserveStoreInventory", reserveInput);
