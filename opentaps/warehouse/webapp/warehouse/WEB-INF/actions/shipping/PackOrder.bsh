@@ -141,7 +141,9 @@ if (UtilValidate.isNotEmpty(orderId)) {
     if (orderHeader != null) {
     	partyGV = delegator.findByPrimaryKey("Party", UtilMisc.toMap("partyId", orderHeader.getString("billToPartyId")));
         OrderReadHelper orh = new OrderReadHelper(orderHeader);
-        context.put("creditLimit", partyGV.getString("creditLimit"));
+        if(UtilValidate.isNotEmpty(partyGV)) {
+        	context.put("creditLimit", partyGV.getString("creditLimit"));
+        }
         // check if customer is in do not ship group
         partyReader = new PartyReader(orh.getBillToParty());
         if (partyReader.hasClassification("DONOTSHIP_CUSTOMERS")) {

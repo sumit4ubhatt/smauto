@@ -36,6 +36,7 @@ import org.ofbiz.entity.condition.EntityOperator;
 import org.ofbiz.entity.util.EntityFindOptions;
 import org.opentaps.domain.DomainsDirectory;
 import org.opentaps.base.entities.Facility;
+import org.opentaps.base.entities.FacilityPartyPriority;
 import org.opentaps.base.entities.InventoryItemAndLocation;
 import org.opentaps.base.entities.InventoryItemDetail;
 import org.opentaps.base.entities.InventoryItemTraceDetail;
